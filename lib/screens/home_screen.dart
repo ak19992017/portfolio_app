@@ -41,17 +41,41 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    return Builder(builder: (context) {
-      return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: buildAppBar(),
-        body: buildSection(screenWidth, screenHeight),
-        endDrawer: Container(
-          width: screenWidth < 650 ? screenWidth : screenWidth * 0.5,
-          child: Drawer(),
+    return Builder(
+      builder: (context) {
+        return Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar: buildAppBar(screenWidth),
+          body: buildSection(screenWidth, screenHeight),
+          endDrawer: buildDrawer(screenWidth),
+        );
+      },
+    );
+  }
+
+  Container buildDrawer(double screenWidth) {
+    return Container(
+      width: screenWidth < 650 ? screenWidth : screenWidth * 0.5,
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(50)),
+        child: Drawer(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text('This is the Drawer'),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Close Drawer'),
+                ),
+              ],
+            ),
+          ),
         ),
-      );
-    });
+      ),
+    );
   }
 
   Container buildSection(double screenWidth, double screenHeight) {
@@ -90,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar(double screenWidth) {
     return AppBar(
       title: Text(
         "portfolio",
@@ -100,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen>
           fontSize: 30,
         ),
       ),
-      iconTheme: IconThemeData(color: Colors.white, size: 50),
+      iconTheme: IconThemeData(color: Colors.white, size: screenWidth / 25),
       elevation: 0,
       backgroundColor: Colors.transparent,
     );
