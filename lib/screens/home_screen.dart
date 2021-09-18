@@ -46,7 +46,16 @@ class _HomeScreenState extends State<HomeScreen>
         return Scaffold(
           extendBodyBehindAppBar: true,
           appBar: buildAppBar(screenWidth),
-          body: buildSection(screenWidth, screenHeight),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                buildSection(screenWidth, screenHeight),
+                Section(color: Colors.red),
+                Section(color: Colors.green),
+                Section(color: Colors.amber),
+              ],
+            ),
+          ),
           endDrawer: buildDrawer(screenWidth),
         );
       },
@@ -127,6 +136,20 @@ class _HomeScreenState extends State<HomeScreen>
       iconTheme: IconThemeData(color: Colors.white, size: screenWidth / 25),
       elevation: 0,
       backgroundColor: Colors.transparent,
+    );
+  }
+}
+
+class Section extends StatelessWidget {
+  final Color color;
+  const Section({Key? key, required this.color}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      color: color,
     );
   }
 }
