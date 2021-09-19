@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/screens/blog_screen.dart';
-import 'package:portfolio_app/screens/contact_screen.dart';
+import 'package:portfolio_app/screens/contact_us_screen.dart';
 import 'package:portfolio_app/screens/home_screen.dart';
 import 'package:portfolio_app/screens/project_screen.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomeScreen(),
         '/project': (context) => const ProjectScreen(),
         '/blog': (context) => const BlogScreen(),
-        '/contact': (context) => const ContactScreen(),
+        '/contact': (context) => const ContactUsScreen(),
       },
     );
   }

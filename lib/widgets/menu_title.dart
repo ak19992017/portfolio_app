@@ -17,7 +17,7 @@ class MenuTitle extends StatelessWidget {
       },
       child: Text(
         text,
-        style: const TextStyle(fontSize: 80),
+        style: const TextStyle(fontSize: 60),
       ),
     );
   }

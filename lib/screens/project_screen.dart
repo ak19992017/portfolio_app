@@ -12,7 +12,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Projecta"),
+        title: const Text("Projects"),
         centerTitle: true,
       ),
       body: Center(
