@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/screens/blog_screen.dart';
+import 'package:portfolio_app/screens/contact_screen.dart';
 import 'package:portfolio_app/screens/home_screen.dart';
+import 'package:portfolio_app/screens/project_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,7 +17,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: "Poppins",
       ),
-      home: const HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/project': (context) => const ProjectScreen(),
+        '/blog': (context) => const BlogScreen(),
+        '/contact': (context) => const ContactScreen(),
+      },
     );
   }
 }
