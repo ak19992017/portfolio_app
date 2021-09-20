@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers, avoid_print
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/widgets/custom_button.dart';
 import 'package:portfolio_app/widgets/custom_drawer.dart';
 import 'package:portfolio_app/widgets/section.dart';
 
@@ -70,25 +71,36 @@ class _HomeScreenState extends State<HomeScreen>
                             color: Colors.white70,
                             child: SlideTransition(
                               position: translateAnimation,
-                              child: Text(
-                                """Hello, my\nname’s Aditya.\nI’m a Flutter\nDeveloper.""",
-                                style: TextStyle(
-                                  fontSize: screenWidth / 16,
-                                  fontWeight: FontWeight.bold,
-                                  height: 1.0,
-                                  letterSpacing: 0.01,
-                                ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    """Hello, my\nname’s Aditya.\nI’m a Flutter\nDeveloper.""",
+                                    style: TextStyle(
+                                      fontSize: screenWidth / 16,
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.0,
+                                      letterSpacing: 0.01,
+                                    ),
+                                  ),
+                                  SizedBox(height: 40),
+                                  CustomButton(
+                                    text: "Discover",
+                                    onPressed: () {},
+                                  ),
+                                ],
                               ),
                             ),
                             alignment: Alignment.center,
                           ),
                         ),
-                        Expanded(
-                          flex: 5,
-                          child: Container(
-                            color: Color(0XFF9747FF),
-                          ),
-                        ),
+                        if (screenWidth > 650)
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              color: Color(0XFF9747FF),
+                            ),
+                          )
                       ],
                     ),
                   ),

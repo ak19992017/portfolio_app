@@ -11,13 +11,14 @@ class MenuTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, routeName);
       },
       child: Text(
         text,
-        style: const TextStyle(fontSize: 60),
+        style: TextStyle(fontSize: screenWidth / 18),
       ),
     );
   }
