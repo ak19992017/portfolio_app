@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class ContactUsScreen extends StatefulWidget {
-  const ContactUsScreen({Key? key}) : super(key: key);
+class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({Key? key}) : super(key: key);
 
   @override
-  _ContactUsScreenState createState() => _ContactUsScreenState();
+  _SettingsScreenState createState() => _SettingsScreenState();
 }
 
-class _ContactUsScreenState extends State<ContactUsScreen> {
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Contact Us"),
+        title: const Text("Settings"),
         centerTitle: true,
       ),
       body: Center(

@@ -7,7 +7,9 @@ import 'package:portfolio_app/widgets/on_hover_text.dart';
 class CustomDrawer extends StatefulWidget {
   final BuildContext context;
   final double screenWidth;
-  static final texts = ["Projects", "Blog", "Settings", "Contact"];
+  static final texts = ["Projects", "Blogs", "Settings", "Contacts"];
+  static final routeNames = ["/projects", "/blogs", "/settings", "/contacts"];
+
   const CustomDrawer({
     Key? key,
     required this.context,
@@ -34,19 +36,25 @@ class _CustomDrawerState extends State<CustomDrawer> {
             children: <Widget>[
               ListView.separated(
                 shrinkWrap: true,
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(10),
                 separatorBuilder: (context, index) => Divider(),
                 itemCount: CustomDrawer.texts.length,
                 itemBuilder: (context, index) {
                   final text = CustomDrawer.texts[index];
+                  final routeName = CustomDrawer.routeNames[index];
                   return Center(
                     child: OnHoverText(builder: (bool isHovered) {
                       final color = isHovered ? Colors.orange : Colors.black;
-                      return Container(
-                        width: 160,
-                        child: Text(
-                          text,
-                          style: TextStyle(fontSize: 32, color: color),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, routeName);
+                        },
+                        child: Container(
+                          width: 160,
+                          child: Text(
+                            text,
+                            style: TextStyle(fontSize: 32, color: color),
+                          ),
                         ),
                       );
                     }),

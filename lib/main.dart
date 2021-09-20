@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/screens/blog_screen.dart';
-import 'package:portfolio_app/screens/contact_us_screen.dart';
+import 'package:portfolio_app/screens/blogs_screen.dart';
+import 'package:portfolio_app/screens/contacts_screen.dart';
 import 'package:portfolio_app/screens/home_screen.dart';
-import 'package:portfolio_app/screens/project_screen.dart';
+import 'package:portfolio_app/screens/projects_screen.dart';
+import 'package:portfolio_app/screens/settings_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,9 +21,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
-        '/project': (context) => const ProjectScreen(),
-        '/blog': (context) => const BlogScreen(),
-        '/contact': (context) => const ContactUsScreen(),
+        '/projects': (context) => const ProjectsScreen(),
+        '/blogs': (context) => const BlogsScreen(),
+        '/settings': (context) => const SettingsScreen(),
+        '/contacts': (context) => const ContactsScreen(),
       },
     );
   }
