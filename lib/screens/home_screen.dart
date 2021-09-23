@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/widgets/custom_button.dart';
 import 'package:portfolio_app/widgets/custom_drawer.dart';
+import 'package:portfolio_app/widgets/on_hover_button.dart';
 import 'package:portfolio_app/widgets/section.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -69,27 +70,30 @@ class _HomeScreenState extends State<HomeScreen>
                           flex: 7,
                           child: Container(
                             color: Colors.white70,
-                            child: SlideTransition(
-                              position: translateAnimation,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SlideTransition(
+                                  position: translateAnimation,
+                                  child: Text(
                                     """Hello, my\nname’s Aditya.\nI’m a Flutter\nDeveloper.""",
                                     style: TextStyle(
-                                      fontSize: screenWidth / 16,
+                                      fontSize: screenWidth / 18,
                                       fontWeight: FontWeight.bold,
                                       height: 1.0,
                                       letterSpacing: 0.01,
                                     ),
                                   ),
-                                  SizedBox(height: 40),
-                                  CustomButton(
+                                ),
+                                SizedBox(height: 40),
+                                OnHoverButton(
+                                  child: CustomButton(
                                     text: "Discover",
                                     onPressed: () {},
+                                    color: Colors.amberAccent,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                             alignment: Alignment.center,
                           ),

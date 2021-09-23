@@ -6,8 +6,13 @@ import 'package:portfolio_app/widgets/on_hover_button.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
-  const CustomButton({Key? key, required this.text, this.onPressed})
-      : super(key: key);
+  final Color color;
+  const CustomButton({
+    Key? key,
+    required this.text,
+    this.onPressed,
+    this.color = Colors.green,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +20,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         child: Text(text),
+        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(color)),
       ),
     );
   }
