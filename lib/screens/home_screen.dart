@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   child: CustomButton(
                                     text: "Discover",
                                     onPressed: () {},
-                                    color: Colors.amberAccent,
+                                    color: Colors.redAccent,
                                   ),
                                 ),
                               ],
@@ -114,6 +114,8 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
             drawer: CustomDrawer(context: context, screenWidth: screenWidth),
+            floatingActionButton:
+                FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
           ),
         );
       },

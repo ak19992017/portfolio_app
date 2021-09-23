@@ -1,7 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/widgets/custom_button.dart';
+import 'package:portfolio_app/widgets/on_hover_button.dart';
 import 'package:portfolio_app/widgets/on_hover_text.dart';
 
 class CustomDrawer extends StatefulWidget {
@@ -36,7 +36,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
             children: <Widget>[
               ListView.separated(
                 shrinkWrap: true,
-                padding: EdgeInsets.all(10),
                 separatorBuilder: (context, index) => Divider(),
                 itemCount: CustomDrawer.texts.length,
                 itemBuilder: (context, index) {
@@ -62,11 +61,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 },
               ),
               SizedBox(height: 20),
-              CustomButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                text: 'Close Drawer',
+              OnHoverButton(
+                child: CustomButton(
+                  text: 'Close Drawer',
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
               ),
             ],
           ),
