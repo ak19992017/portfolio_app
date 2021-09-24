@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers, avoid_print
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers, avoid_print, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen>
                 floating: true,
                 snap: true,
                 title: Text(
-                  "portfolio",
+                  "Portfolio",
                   style: TextStyle(fontFamily: "Comfortaa"),
                 ),
                 elevation: 0,
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen>
                 child: Column(
                   children: [
                     Section(
-                      color: Colors.white,
+                      color: Colors.grey,
                       child: Row(
                         children: [
                           Expanded(
@@ -124,8 +124,95 @@ class _HomeScreenState extends State<HomeScreen>
                         ],
                       ),
                     ),
-                    Section(color: Colors.green, child: Container()),
-                    Section(color: Colors.amber, child: Container()),
+                    Section(
+                        color: Colors.white,
+                        child: Padding(
+                          padding: EdgeInsets.all(50),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "I enjoy creating delightful,\nhuman-centered digital experiences.",
+                                style: TextStyle(
+                                  fontSize: screenWidth / 25,
+                                ),
+                              ),
+                              SizedBox(height: 30),
+                              Text(
+                                "Think.Make.\nSolve.",
+                                style: TextStyle(
+                                  fontSize: screenWidth / 14,
+                                  fontWeight: FontWeight.bold,
+                                  height: 1.0,
+                                  letterSpacing: 0.01,
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              OnHoverButton(
+                                child: CustomButton(
+                                  text: 'Contact Me',
+                                  onPressed: () {},
+                                ),
+                              )
+                            ],
+                          ),
+                        )),
+                    Section(
+                      color: Colors.amber,
+                      child: Padding(
+                        padding: EdgeInsets.all(50),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Look at My\nProducts.",
+                              style: TextStyle(
+                                fontSize: screenWidth / 14,
+                                fontWeight: FontWeight.bold,
+                                height: 1.0,
+                                letterSpacing: 0.01,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Card(
+                              shadowColor: Colors.red,
+                              elevation: 8,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24)),
+                              clipBehavior: Clip.antiAlias,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      colors: [Colors.redAccent, Colors.red],
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter),
+                                ),
+                                padding: EdgeInsets.all(16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Coloured card',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      "This card is rounded and has a gradient ",
+                                      style: TextStyle(
+                                          fontSize: 20, color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                     Section(color: Colors.redAccent, child: Container()),
                     Section(color: Colors.deepPurpleAccent, child: Container()),
                   ],

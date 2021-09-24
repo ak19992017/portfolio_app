@@ -7,11 +7,13 @@ class CustomButton extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
   final Color color;
+  final double padding;
   const CustomButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.color = Colors.green,
+    this.padding = 20,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,10 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         child: Text(text),
-        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(color)),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(color),
+          padding: MaterialStateProperty.all(EdgeInsets.all(padding)),
+        ),
       ),
     );
   }
