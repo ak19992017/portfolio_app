@@ -64,9 +64,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               OnHoverButton(
                 child: CustomButton(
                   text: 'Close Drawer',
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
+                  onPressed: () => Navigator.of(context).pop(),
                 ),
               ),
             ],

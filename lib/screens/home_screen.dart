@@ -94,21 +94,16 @@ class _HomeScreenState extends State<HomeScreen>
                                     child: Text(
                                       """Hello, my\nname’s Aditya.\nI’m a Flutter\nDeveloper.""",
                                       style: TextStyle(
-                                        fontSize: screenWidth / 18,
+                                        fontSize: screenWidth > 650
+                                            ? screenWidth / 18
+                                            : screenWidth / 15,
                                         fontWeight: FontWeight.bold,
-                                        height: 1.0,
-                                        letterSpacing: 0.01,
+                                        height: 1.2,
+                                        letterSpacing: 0.1,
                                       ),
                                     ),
                                   ),
                                   SizedBox(height: 40),
-                                  OnHoverButton(
-                                    child: CustomButton(
-                                      text: "Discover",
-                                      onPressed: () {},
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
                                 ],
                               ),
                               alignment: Alignment.center,
@@ -135,24 +130,34 @@ class _HomeScreenState extends State<HomeScreen>
                               Text(
                                 "I enjoy creating delightful,\nhuman-centered digital experiences.",
                                 style: TextStyle(
-                                  fontSize: screenWidth / 25,
+                                  fontSize: screenWidth / 28,
                                 ),
                               ),
-                              SizedBox(height: 30),
+                              SizedBox(height: 50),
                               Text(
-                                "Think.Make.\nSolve.",
+                                screenWidth < 650
+                                    ? "Think.\nMake.\nSolve."
+                                    : "Think.Make.\nSolve.",
                                 style: TextStyle(
-                                  fontSize: screenWidth / 14,
+                                  fontSize: screenWidth < 650
+                                      ? screenWidth / 9
+                                      : screenWidth / 18,
                                   fontWeight: FontWeight.bold,
-                                  height: 1.0,
-                                  letterSpacing: 0.01,
+                                  height: 1.2,
+                                  letterSpacing: 0.1,
                                 ),
                               ),
                               SizedBox(height: 20),
                               OnHoverButton(
-                                child: CustomButton(
-                                  text: 'Contact Me',
-                                  onPressed: () {},
+                                child: Container(
+                                  width: screenWidth < 650
+                                      ? double.infinity
+                                      : null,
+                                  child: CustomButton(
+                                    text: 'Contact Me',
+                                    onPressed: () {},
+                                    padding: 25,
+                                  ),
                                 ),
                               )
                             ],
@@ -167,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen>
                             Text(
                               "Look at My\nProducts.",
                               style: TextStyle(
-                                fontSize: screenWidth / 14,
+                                fontSize: screenWidth / 18,
                                 fontWeight: FontWeight.bold,
                                 height: 1.0,
                                 letterSpacing: 0.01,
